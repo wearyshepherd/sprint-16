@@ -33,7 +33,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <div className="transparent-container">
         <h1>Pokémon Generator</h1>
         <button id="generateButton" onClick={generatePokemon}>Generate Pokémon</button>
         <div className="pokemon-container">
@@ -44,7 +44,7 @@ function App() {
             </div>
           ))}
         </div>
-      </header>
+      </div>
     </div>
   );
 }
