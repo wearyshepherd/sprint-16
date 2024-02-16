@@ -33,7 +33,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="transparent-container">
+      <header className="App-header">
         <h1>Pokémon Generator</h1>
         <button id="generateButton" onClick={generatePokemon}>Generate Pokémon</button>
         <div className="pokemon-container">
@@ -44,10 +44,7 @@ function App() {
             </div>
           ))}
         </div>
-      </div>
-      <footer className="App-footer">
-        Created by Trippleten Student Carlos Chavez
-      </footer>
+      </header>
     </div>
   );
 }
