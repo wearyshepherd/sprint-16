@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [pokemons, setPokemons] = useState(Array(6).fill(null));
+
+  const generatePokemon = () => {
+    // Your existing logic to generate Pokémon
+    // Update the state with the fetched Pokémon data
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1>Pokémon Generator</h1>
+      <button id="generateButton" onClick={generatePokemon}>Generate Pokémon</button>
+      <div className="pokemon-container">
+        {pokemons.map((pokemon, index) => (
+          <div className="pokemon" key={index}>
+            {pokemon && (
+              <>
+                <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+                <p>{pokemon.name}</p>
+              </>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
