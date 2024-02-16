@@ -45,6 +45,9 @@ function App() {
           ))}
         </div>
       </div>
+      <footer className="App-footer">
+        Created by Trippleten Student Carlos Chavez
+      </footer>
     </div>
   );
 }
