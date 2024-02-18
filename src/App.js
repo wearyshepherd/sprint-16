@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { fetchRandomPokemon } from './api/pokemonApi';
+import './App.css';
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
@@ -33,7 +33,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <div className="transparent-container">
         <h1>Pokémon Generator</h1>
         <button id="generateButton" onClick={generatePokemon}>Generate Pokémon</button>
         <div className="pokemon-container">
@@ -44,7 +44,10 @@ function App() {
             </div>
           ))}
         </div>
-      </header>
+      </div>
+      <footer className="App-footer">
+        Created by Trippleten Student Carlos Chavez
+      </footer>
     </div>
   );
 }
