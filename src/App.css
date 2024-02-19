@@ -1,0 +1,102 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#generateButton {
+  background-color: #9BCC50; /* Green background, similar to Gameboy color */
+  color: white; /* White text */
+  border: none; /* No border */
+  padding: 10px 20px; /* Padding for size */
+  font-family: 'Press Start 2P', cursive; /* 8-bit style font */
+  text-transform: uppercase; /* Uppercase text */
+  cursor: pointer; /* Cursor changes to a pointer on hover */
+  box-shadow: 3px 3px 0px #388E3C; /* Box shadow for 3D effect */
+  transition: all 0.3s ease; /* Smooth transition for click effect */
+}
+
+#generateButton:hover {
+  background-color: #8BC34A; /* Slightly lighter green on hover */
+}
+
+#generateButton:active {
+  box-shadow: 1px 1px 0px #388E3C; /* Shadow shifts on click */
+  transform: translate(2px, 2px); /* Button moves slightly on click */
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('./images/pokemon-background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 100vh;
+}
+
+.pokemon-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.pokemon {
+  margin: 10px;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokemon img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.pokemon p {
+  font-family: 'Press Start 2P', cursive;
+}
+
+.main-container {
+  border: 2px solid #000;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.main-container h1 {
+  font-family: 'Press Start 2P', cursive;
+  color: rgb(255, 208, 0);
+  font-size: 2em;
+  text-shadow: 2px 2px #000000;
+}
+.App-footer {
+  font-family: 'Orbitron', sans-serif;
+  color: #C0C0C0;
+  text-shadow: 1px 1px #808080;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  width: 100%; /* Full width */
+  position: fixed; /* Fixed at the bottom */
+  bottom: 0; /* Align to bottom */
+  left: 0; /* Align to left */
+  text-align: center; /* Center the text */
+}
+nav {
+  /* Add margin-top to lower the navigation links */
+  margin-top: 20px;
+}
+
