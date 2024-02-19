@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
-import About from './About'; // Make sure this component exists
+import About from './About'; // Ensure the About component exists
+import { fetchRandomPokemon } from './components/api/pokemonApi'; // Import fetchRandomPokemon
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
@@ -9,6 +10,7 @@ function App() {
   const generatePokemon = () => {
     const pokemonArray = [];
     for (let i = 0; i < 6; i++) {
+      // Now fetchRandomPokemon should be recognized since it's imported
       fetchRandomPokemon(i + 1).then(data => {
         pokemonArray.push(data);
         if (pokemonArray.length === 6) {
@@ -18,17 +20,6 @@ function App() {
     }
   };
 
-  const fetchRandomPokemon = async (pokemonNumber) => {
-    const pokemonId = Math.floor(Math.random() * 151) + 1;
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
-    const data = await response.json();
-    return {
-      id: pokemonNumber,
-      name: capitalizeFirstLetter(data.name),
-      image: data.sprites.front_default
-    };
-  };
-
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
@@ -36,8 +27,8 @@ function App() {
   return (
     <div className="App">
       <nav>
-        <Link to="/" className="nav-link">Home</Link>  {/* Updated Link */}
-        <Link to="/about" className="nav-link">About Me</Link> {/* Updated Link */}
+        <Link to="/" className="nav-link">Home</Link>
+        <Link to="/about" className="nav-link">About Me</Link>
       </nav>
       <Routes>
         <Route exact path="/" element={
