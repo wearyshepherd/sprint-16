@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
-import { fetchRandomPokemon } from './components/api/pokemonApi';
+import About from './About'; // Make sure this component exists
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
@@ -34,24 +35,32 @@ function App() {
 
   return (
     <div className="App">
-      <div className="main-container">
-        <h1>Pokémon Generator</h1>
-        <button id="generateButton" onClick={generatePokemon}>Generate Pokémon</button>
-        <div className="pokemon-container">
-          {pokemonData.map(pokemon => (
-            <div className="pokemon" key={pokemon.id}>
-              <img src={pokemon.image} alt={pokemon.name} />
-              <p>{pokemon.name}</p>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+      </nav>
+      <Routes>
+        <Route exact path="/" element={
+          <div className="main-container">
+            <h1>Pokémon Generator</h1>
+            <button id="generateButton" onClick={generatePokemon}>Generate Pokémon</button>
+            <div className="pokemon-container">
+              {pokemonData.map(pokemon => (
+                <div className="pokemon" key={pokemon.id}>
+                  <img src={pokemon.image} alt={pokemon.name} />
+                  <p>{pokemon.name}</p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
+        } />
+        <Route path="/about" element={<About />} />
+      </Routes>
       <footer className="App-footer">
-        Created by TrippleTen student Carlos Chavez
+        Created by Trippleten Student Carlos Chavez
       </footer>
     </div>
   );
 }
 
 export default App;
-
