@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import { fetchRandomPokemon } from './components/api/pokemonApi';
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
