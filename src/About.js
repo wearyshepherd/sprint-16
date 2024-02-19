@@ -1,12 +1,10 @@
 import React from 'react';
-import backgroundImage from './images/pokemon-background.png';
 
 const About = () => {
   return (
     <div>
-      <h1>About Me</h1>
-      <p>This is some information about Carlos Chavez.</p>
-      {/* More about content */}
+      <h1>About</h1>
+      <p>This page contains information about the project and its creator.</p>
     </div>
   );
 };
