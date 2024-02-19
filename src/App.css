@@ -95,3 +95,7 @@
   left: 0; /* Align to left */
   text-align: center; /* Center the text */
 }
+nav {
+  /* Add margin-top to lower the navigation links */
+  margin-top: 20px;
+}
