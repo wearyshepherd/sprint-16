@@ -6,7 +6,7 @@
   height: 100vh;
 }
 
-#generateButton {
+.generate-button {
   background-color: #9BCC50; /* Green background, similar to Gameboy color */
   color: white; /* White text */
   border: none; /* No border */
@@ -18,11 +18,11 @@
   transition: all 0.3s ease; /* Smooth transition for click effect */
 }
 
-#generateButton:hover {
+.generate-button:hover {
   background-color: #8BC34A; /* Slightly lighter green on hover */
 }
 
-#generateButton:active {
+.generate-button:active {
   box-shadow: 1px 1px 0px #388E3C; /* Shadow shifts on click */
   transform: translate(2px, 2px); /* Button moves slightly on click */
 }
