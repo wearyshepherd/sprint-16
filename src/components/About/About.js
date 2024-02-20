@@ -19,11 +19,11 @@ const About = () => {
   };
 
   const titleStyle = {
-    fontFamily: '"Press Start 2P", cursive', // This is the 8-bit style font
+    fontFamily: '"Press Start 2P", cursive',
   };
 
   const paragraphStyle = {
-    lineHeight: '1.6', // This increases the line spacing
+    lineHeight: '1.6',
   };
 
   return (
@@ -34,9 +34,9 @@ const About = () => {
       <div style={contentBoxStyle}>
         <h1 style={titleStyle}>About Me</h1>
         <p style={paragraphStyle}>
-          I'm nearing the end of my journey at Trippleten, where I've honed my skills in technology and software development. 
+          I&apos;m nearing the end of my journey at Trippleten, where I&apos;ve honed my skills in technology and software development. 
           My educational background includes a comprehensive media communication program at Full Sail University, where I mastered 
-          a variety of disciplines such as audio and media production. Currently, I'm transitioning from my role as a delivery driver 
+          a variety of disciplines such as audio and media production. Currently, I&apos;m transitioning from my role as a delivery driver 
           for the United States Postal Service to a career in the tech industry. This pivot reflects my passion for technology and 
           my commitment to continuous learning and growth.
         </p>
