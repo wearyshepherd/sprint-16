@@ -3,6 +3,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import About from './components/About/About';
 import { fetchRandomPokemon } from './utils/api/pokemonApi'; 
+import About from './About';
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
