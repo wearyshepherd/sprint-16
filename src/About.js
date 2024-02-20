@@ -1,49 +1,56 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
+import './App.css';
+import About from './components/About/About';
+import { fetchRandomPokemon } from './utils/api/pokemonApi'; 
 
-const About = () => {
-  const backgroundStyle = {
-    backgroundImage: `url('/about-back.png')`,
-    backgroundSize: 'cover',
-    minHeight: '100vh',
+function App() {
+  const [pokemonData, setPokemonData] = useState([]);
+
+  const generatePokemon = () => {
+    const pokemonArray = [];
+    for (let i = 0; i < 6; i++) {
+      fetchRandomPokemon(i + 1).then(data => {
+        pokemonArray.push(data);
+        if (pokemonArray.length === 6) {
+          setPokemonData(pokemonArray);
+        }
+      });
+    }
   };
 
-  const contentBoxStyle = {
-    backgroundColor: 'rgba(255, 255, 255, 0.8)',
-    padding: '20px',
-    margin: '20px auto',
-    borderRadius: '10px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    maxWidth: '800px',
-    textAlign: 'center',
-  };
-
-  const titleStyle = {
-    fontFamily: '"Press Start 2P", cursive',
-  };
-
-  const paragraphStyle = {
-    lineHeight: '1.6',
+  const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
   };
 
   return (
-    <div style={backgroundStyle}>
+    <div className="App">
       <nav>
         <Link to="/" className="nav-link">Home</Link>
+        <Link to="/about" className="nav-link">About Me</Link>
       </nav>
-      <div style={contentBoxStyle}>
-        <h1 style={titleStyle}>About Me</h1>
-        <p style={paragraphStyle}>
-          I&apos;m nearing the end of my journey at Trippleten, where I&apos;ve honed my skills in technology and software development. 
-          My educational background includes a comprehensive media communication program at Full Sail University, where I mastered 
-          a variety of disciplines such as audio and media production. Currently, I&apos;m transitioning from my role as a delivery driver 
-          for the United States Postal Service to a career in the tech industry. This pivot reflects my passion for technology and 
-          my commitment to continuous learning and growth.
-        </p>
-        {/* Add more personal details or professional achievements as needed */}
-      </div>
+      <Routes>
+        <Route exact path="/" element={
+          <main className="main-container">
+            <h1>Pokémon Generator</h1>
+            <button className="generate-button" onClick={generatePokemon}>Generate Pokémon</button>
+            <div className="pokemon-container">
+              {pokemonData.map(pokemon => (
+                <div className="pokemon" key={pokemon.id}>
+                  <img src={pokemon.image} alt={pokemon.name} />
+                  <p>{capitalizeFirstLetter(pokemon.name)}</p>
+                </div>
+              ))}
+            </div>
+          </main>
+        } />
+        <Route path="/about" element={<About />} />
+      </Routes>
+      <footer className="App-footer">
+        Created by Trippleten Student Carlos Chavez
+      </footer>
     </div>
   );
-};
+}
 
-export default About;
+export default App;

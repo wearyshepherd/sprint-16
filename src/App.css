@@ -6,7 +6,7 @@
   height: 100vh;
 }
 
-#generateButton {
+.generate-button {
   background-color: #9BCC50; /* Green background, similar to Gameboy color */
   color: white; /* White text */
   border: none; /* No border */
@@ -18,11 +18,11 @@
   transition: all 0.3s ease; /* Smooth transition for click effect */
 }
 
-#generateButton:hover {
+.generate-button:hover {
   background-color: #8BC34A; /* Slightly lighter green on hover */
 }
 
-#generateButton:active {
+.generate-button:active {
   box-shadow: 1px 1px 0px #388E3C; /* Shadow shifts on click */
   transform: translate(2px, 2px); /* Button moves slightly on click */
 }
@@ -83,20 +83,62 @@
   font-size: 2em;
   text-shadow: 2px 2px #000000;
 }
+
 .App-footer {
   font-family: 'Orbitron', sans-serif;
   color: #C0C0C0;
   text-shadow: 1px 1px #808080;
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-  width: 100%; /* Full width */
-  position: fixed; /* Fixed at the bottom */
-  bottom: 0; /* Align to bottom */
-  left: 0; /* Align to left */
-  text-align: center; /* Center the text */
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  text-align: center;
 }
+
 nav {
-  /* Add margin-top to lower the navigation links */
   margin-top: 20px;
 }
 
+@media (max-width: 320px) {
+  .main-container,
+  .content-box,
+  .other-elements {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .pokemon {
+    width: calc(50% - 20px); /* Adjust width to fit 2 items per row */
+    margin: 10px;
+  }
+
+  .pokemon img {
+    width: 80px; /* Adjust image size for small screens */
+    height: 80px;
+  }
+  
+  /* Adjusting the font size for smaller screens for better readability */
+  .main-container h1,
+  .pokemon p {
+    font-size: 1em;
+  }
+
+  /* Adjusting the padding and size of the generate button for smaller screens */
+  #generateButton {
+    padding: 8px 16px;
+    font-size: 0.8em;
+  }
+
+  .App-footer {
+    padding: 10px;
+    font-size: 0.8em;
+  }
+  body {
+    font-family: '8BitWonder', sans-serif;
+  }
+  
+}
