@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.nav-link {
+  background-color: #FFA500; /* Orange background color */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding for size */
+  font-family: 'Press Start 2P', cursive; /* 8-bit style font */
+  text-decoration: none; /* Remove underline from links */
+  margin: 5px; /* Spacing between buttons */
+  border: none; /* No border for button style */
+  cursor: pointer; /* Cursor changes to a pointer on hover */
+  box-shadow: 2px 2px 0px #CC6A00; /* Box shadow for 3D effect */
+  transition: all 0.2s ease; /* Smooth transition for effects */
+}
+
+.nav-link:hover {
+  background-color: #FFD700; /* Slightly lighter orange on hover */
+  box-shadow: 1px 1px 0px #CC6A00; /* Adjusted box shadow on hover */
+}
+
+.nav-link:active {
+  box-shadow: none; /* Removes shadow when active/pressed */
+  position: relative;
+  top: 2px; /* Moves the button down to simulate press */
+}
