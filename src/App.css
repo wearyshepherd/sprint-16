@@ -62,13 +62,11 @@
 
 .pokemon {
   flex-basis: calc(33.333% - 10px); /* Set the base size for flex items, minus margin */
-  flex-grow: 1; /* Allow the items to grow to fit the container */
-  flex-shrink: 0; /* Prevent the items from shrinking smaller than their content */
-  margin: 5px; /* Reduced margin for smaller screens */
-  height: auto; /* Set height to auto to accommodate the content */
-  align-items: center; /* Center-align items vertically */
-  justify-content: center; /* Center-align items horizontally */
-  text-align: center; /* Ensure text is centered under the image */
+  margin: 10px; /* Consistent margin for spacing */
+  display: flex; /* Use flex to manage the layout */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Align items in the center horizontally within the .pokemon div */
+  justify-content: center; /* Center content vertically within the .pokemon div */
 }
 
 .pokemon p {
@@ -115,18 +113,26 @@ nav {
 
 @media (max-width: 370px) {
   .pokemon-container {
-    justify-content: center; /* Centers the pokemon in the container */
+    justify-content: space-around; /* This will space out the items evenly */
   }
 
   .pokemon img {
-    width: auto; /* Set width to auto to maintain aspect ratio */
-    height: 80px; /* Set a fixed height for consistency */
-    object-fit: contain; /* Ensure the images maintain their aspect ratio */
+    width: auto; /* Image width will scale with the container */
+    height: 80px; /* Set a fixed height for the images */
+    object-fit: contain; /* Keep the aspect ratio of the image */
   }
 
   .main-container h1,
   .pokemon p {
-    font-size: 1em;
+    font-size: 0.8em; /* Smaller font size for the names */
+    margin-top: 5px; /* Space between the image and the name */
+  }
+  .pokemon-name {
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis to text that overflows */
+    white-space: nowrap; /* Keep the name on a single line */
+    width: 100px; /* Match the width of the image */
+    margin: 0 auto; /* Center the name horizontally */
   }
 
   #generateButton {
