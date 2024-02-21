@@ -60,10 +60,9 @@
   align-items: center;
 }
 
-.pokemon img {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
+.pokemon {
+  width: calc(50% - 20px); /* Adjust to fit 2 items per row without squishing */
+  margin: 10px;
 }
 
 .pokemon p {
@@ -105,13 +104,15 @@ nav {
 }
 
 @media (max-width: 370px) {
-  .pokemon {
-    width: 100%; /* adjust for smaller screens */
+  .pokemon-container {
+    justify-content: space-around; /* Adjust this to manage spacing */
   }
 
   .pokemon img {
-    width: 80px;
-    height: 80px;
+    width: auto; /* Adjust width or keep it auto */
+    height: auto; /* Adjust height or keep it auto */
+    max-width: 100%; /* Ensure image is not bigger than its container */
+    max-height: 100px; /* Set a max-height to maintain aspect ratio */
   }
 
   .main-container h1,
