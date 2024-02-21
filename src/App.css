@@ -61,13 +61,22 @@
 }
 
 .pokemon {
-  width: calc(33.333% - 20px); /* Each pokemon will take up one third of the container width */
-  margin: 10px;
-  height: auto; /* Height is set to auto to maintain the aspect ratio */
+  flex-basis: calc(33.333% - 10px); /* Set the base size for flex items, minus margin */
+  flex-grow: 1; /* Allow the items to grow to fit the container */
+  flex-shrink: 0; /* Prevent the items from shrinking smaller than their content */
+  margin: 5px; /* Reduced margin for smaller screens */
+  height: auto; /* Set height to auto to accommodate the content */
+  align-items: center; /* Center-align items vertically */
+  justify-content: center; /* Center-align items horizontally */
+  text-align: center; /* Ensure text is centered under the image */
 }
 
 .pokemon p {
-  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8em; /* Reduce font size to prevent overflow */
+  margin-top: 5px; /* Add some space between the image and text */
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflowed text */
+  text-overflow: ellipsis; /* Add an ellipsis to overflowed text */
 }
 
 .main-container {
@@ -106,13 +115,13 @@ nav {
 
 @media (max-width: 370px) {
   .pokemon-container {
-    justify-content: space-around; /* This will space out the items evenly */
+    justify-content: center; /* Centers the pokemon in the container */
   }
 
   .pokemon img {
-    max-width: 100%; /* Max width is 100% to ensure the image is responsive and doesn't overflow */
-    max-height: 100px; /* Max height to keep the images from becoming too tall */
-    object-fit: contain; /* This ensures that the aspect ratio of the images is maintained */
+    width: auto; /* Set width to auto to maintain aspect ratio */
+    height: 80px; /* Set a fixed height for consistency */
+    object-fit: contain; /* Ensure the images maintain their aspect ratio */
   }
 
   .main-container h1,
@@ -144,4 +153,3 @@ body {
   font-family: '8BitWonder', sans-serif;
   overflow-x: hidden; /* Hide horizontal overflow */
 }
-
