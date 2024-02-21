@@ -4,28 +4,34 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Hide horizontal overflow */
 }
 
 .generate-button {
   background-color: #9BCC50; /* Green background, similar to Gameboy color */
-  color: white; /* White text */
-  border: none; /* No border */
-  padding: 10px 20px; /* Padding for size */
+  color: white;
+  border: none;
+  padding: 10px 20px;
   font-family: 'Press Start 2P', cursive; /* 8-bit style font */
-  text-transform: uppercase; /* Uppercase text */
-  cursor: pointer; /* Cursor changes to a pointer on hover */
-  box-shadow: 3px 3px 0px #388E3C; /* Box shadow for 3D effect */
-  transition: all 0.3s ease; /* Smooth transition for click effect */
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 3px 3px 0px #388E3C;
+  transition: all 0.3s ease;
 }
 
 .generate-button:hover {
-  background-color: #8BC34A; /* Slightly lighter green on hover */
+  background-color: #8BC34A;
 }
 
 .generate-button:active {
-  box-shadow: 1px 1px 0px #388E3C; /* Shadow shifts on click */
-  transform: translate(2px, 2px); /* Button moves slightly on click */
+  box-shadow: 1px 1px 0px #388E3C;
+  transform: translate(2px, 2px);
+}
+
+.App,
+.App-footer,
+.pokemon-container {
+  overflow-x: hidden; /* Hide horizontal overflow for all */
 }
 
 .App {
@@ -38,7 +44,6 @@
   background-repeat: no-repeat;
   background-position: center center;
   min-height: 100vh;
-  overflow-x: hidden; /* Hide horizontal overflow */
 }
 
 .pokemon-container {
@@ -46,35 +51,32 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 20px;
-  width: 100%; /* ensure container width doesn't exceed viewport */
-  max-width: 1200px; /* or any maximum width that fits your design */
-  overflow-x: hidden; /* Hide horizontal overflow */
+  width: 100%;
+  max-width: 1200px;
 }
 
 .pokemon {
   margin: 10px;
-  width: calc(100% / 6 - 20px); /* adjust for number of items per row */
-  height: auto; /* adjust height automatically */
+  flex-basis: calc(33.333% - 10px);
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
-.pokemon {
-  flex-basis: calc(33.333% - 10px); /* Set the base size for flex items, minus margin */
-  margin: 10px; /* Consistent margin for spacing */
-  display: flex; /* Use flex to manage the layout */
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Align items in the center horizontally within the .pokemon div */
-  justify-content: center; /* Center content vertically within the .pokemon div */
+.pokemon img {
+  width: auto;
+  height: 80px;
+  object-fit: contain;
 }
 
 .pokemon p {
-  font-size: 0.8em; /* Reduce font size to prevent overflow */
-  margin-top: 5px; /* Add some space between the image and text */
-  white-space: nowrap; /* Prevent text from wrapping */
-  overflow: hidden; /* Hide overflowed text */
-  text-overflow: ellipsis; /* Add an ellipsis to overflowed text */
+  font-size: 0.8em;
+  margin-top: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .main-container {
@@ -112,25 +114,11 @@ nav {
 }
 
 @media (max-width: 370px) {
-  .pokemon-container {
-    justify-content: space-around; /* This will space out the items evenly */
+  .pokemon {
+    width: calc(50% - 20px); /* For smaller screens, adjust to fit 2 items per row */
   }
 
-  .pokemon img {
-    width: auto; /* Image width will scale with the container */
-    height: 80px; /* Set a fixed height for the images */
-    object-fit: contain; /* Keep the aspect ratio of the image */
-  }
-
-  .main-container h1,
-  .pokemon p {
-    font-size: 0.8em; /* Smaller font size for the names */
-    margin-top: 5px; /* Space between the image and the name */
-  }
   .pokemon-name {
-    overflow: hidden; /* Hide overflow */
-    text-overflow: ellipsis; /* Add ellipsis to text that overflows */
-    white-space: nowrap; /* Keep the name on a single line */
     width: 100px; /* Match the width of the image */
     margin: 0 auto; /* Center the name horizontally */
   }
@@ -140,22 +128,16 @@ nav {
     font-size: 0.8em;
   }
 
-  .App-footer {
-    padding: 10px;
-    font-size: 0.8em;
-  }
-
+  .App-footer,
   .main-container,
   .content-box,
   .other-elements {
-    width: 100%;
-    max-width: 100%;
     padding: 10px;
-    box-sizing: border-box;
+    font-size: 0.8em;
   }
 }
 
 body {
   font-family: '8BitWonder', sans-serif;
-  overflow-x: hidden; /* Hide horizontal overflow */
 }
+
