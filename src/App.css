@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 .generate-button {
@@ -37,6 +38,7 @@
   background-repeat: no-repeat;
   background-position: center center;
   min-height: 100vh;
+  overflow-x: hidden; /* Hide horizontal overflow */
 }
 
 .pokemon-container {
@@ -46,6 +48,7 @@
   margin-top: 20px;
   width: 100%; /* ensure container width doesn't exceed viewport */
   max-width: 1200px; /* or any maximum width that fits your design */
+  overflow-x: hidden; /* Hide horizontal overflow */
 }
 
 .pokemon {
@@ -138,4 +141,5 @@ nav {
 
 body {
   font-family: '8BitWonder', sans-serif;
+  overflow-x: hidden; /* Hide horizontal overflow */
 }
