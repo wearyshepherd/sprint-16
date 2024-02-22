@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const About = () => {
   const backgroundStyle = {
-    backgroundImage: `url('/about-back.png')`,
+    backgroundImage: `url('/about-back.png')`, // Ensure this path is correct
     backgroundSize: 'cover',
     minHeight: '100vh',
   };
@@ -34,13 +34,9 @@ const About = () => {
       <div style={contentBoxStyle}>
         <h1 style={titleStyle}>About Me</h1>
         <p style={paragraphStyle}>
-          I&apos;m nearing the end of my journey at Trippleten, where I&apos;ve honed my skills in technology and software development. 
-          My educational background includes a comprehensive media communication program at Full Sail University, where I mastered 
-          a variety of disciplines such as audio and media production. Currently, I&apos;m transitioning from my role as a delivery driver 
-          for the United States Postal Service to a career in the tech industry. This pivot reflects my passion for technology and 
-          my commitment to continuous learning and growth.
+          I&apos;m nearing the end of my journey at Trippleten, where I&apos;ve honed my skills in technology and software development...
+          {/* Add more personal details or professional achievements as needed */}
         </p>
-        {/* Add more personal details or professional achievements as needed */}
       </div>
     </div>
   );
