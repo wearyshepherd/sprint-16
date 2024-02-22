@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'Orbitron';
+  src: local('Orbitron'), url('./fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Press Start 2P';
+  src: local('Press Start 2P'), url('./fonts/PressStart2P-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.body-text {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.heading-text {
+  font-family: 'Press Start 2P', cursive;
+}
