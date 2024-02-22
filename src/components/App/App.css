@@ -1,0 +1,143 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.generate-button {
+  background-color: #9BCC50; /* Green background, similar to Gameboy color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-family: 'Press Start 2P', cursive; /* 8-bit style font */
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 3px 3px 0px #388E3C;
+  transition: all 0.3s ease;
+}
+
+.generate-button:hover {
+  background-color: #8BC34A;
+}
+
+.generate-button:active {
+  box-shadow: 1px 1px 0px #388E3C;
+  transform: translate(2px, 2px);
+}
+
+.app,
+.app-footer,
+.pokemon-container {
+  overflow-x: hidden;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../../images/pokemon-background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 100vh;
+}
+
+.pokemon-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.pokemon {
+  margin: 10px;
+  flex-basis: calc(33.333% - 10px);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pokemon img {
+  width: auto;
+  height: 80px;
+  object-fit: contain;
+}
+
+.pokemon p {
+  font-size: 0.8em;
+  margin-top: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.main-container {
+  border: 2px solid #000;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.main-container h1 {
+  font-family: 'Press Start 2P', cursive;
+  color: rgb(255, 208, 0);
+  font-size: 2em;
+  text-shadow: 2px 2px #000000;
+}
+
+.app-footer {
+  font-family: 'Orbitron', sans-serif;
+  color: #C0C0C0;
+  text-shadow: 1px 1px #808080;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+
+nav {
+  margin-top: 20px;
+}
+
+@media (max-width: 370px) {
+  .pokemon {
+    width: calc(50% - 20px); /* For smaller screens, adjust to fit 2 items per row */
+  }
+
+  .pokemon-name {
+    width: 100px; /* Match the width of the image */
+    margin: 0 auto; /* Center the name horizontally */
+  }
+
+  .generate-button {
+    padding: 8px 16px;
+    font-size: 0.8em;
+  }
+
+  .app-footer,
+  .main-container,
+  .content-box,
+  .other-elements {
+    padding: 10px;
+    font-size: 0.8em;
+  }
+}
+
+body {
+  font-family: '8BitWonder', sans-serif;
+  overflow-x: hidden; 
+}
