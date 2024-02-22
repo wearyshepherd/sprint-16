@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  overflow-x: hidden; /* Hide horizontal overflow */
+  overflow-x: hidden;
 }
 
 .generate-button {
@@ -28,13 +28,13 @@
   transform: translate(2px, 2px);
 }
 
-.App,
-.App-footer,
+.app,
+.app-footer,
 .pokemon-container {
-  overflow-x: hidden; /* Hide horizontal overflow for all */
+  overflow-x: hidden;
 }
 
-.App {
+.app {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -96,7 +96,7 @@
   text-shadow: 2px 2px #000000;
 }
 
-.App-footer {
+.app-footer {
   font-family: 'Orbitron', sans-serif;
   color: #C0C0C0;
   text-shadow: 1px 1px #808080;
@@ -123,12 +123,12 @@ nav {
     margin: 0 auto; /* Center the name horizontally */
   }
 
-  #generateButton {
+  .generate-button {
     padding: 8px 16px;
     font-size: 0.8em;
   }
 
-  .App-footer,
+  .app-footer,
   .main-container,
   .content-box,
   .other-elements {
@@ -139,5 +139,5 @@ nav {
 
 body {
   font-family: '8BitWonder', sans-serif;
+  overflow-x: hidden; 
 }
-
