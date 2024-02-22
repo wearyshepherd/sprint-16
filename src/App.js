@@ -24,7 +24,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="app">
       <nav>
         <Link to="/" className="nav-link">Home</Link>
         <Link to="/about" className="nav-link">About Me</Link>
@@ -46,7 +46,7 @@ function App() {
         } />
         <Route path="/about" element={<About />} />
       </Routes>
-      <footer className="App-footer">
+      <footer className="app-footer">
         Created by Trippleten Student Carlos Chavez
       </footer>
     </div>
@@ -54,3 +54,4 @@ function App() {
 }
 
 export default App;
+
